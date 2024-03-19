@@ -1,13 +1,16 @@
-'use strict';
+import { describe, it, expect } from 'vitest';
+import { join, dirname } from 'node:path';
+import { statSync, readdirSync, unlinkSync } from 'fs';
+import { fileURLToPath } from 'node:url';
+import concat from '../src/index';
 
-const { join } = require('path');
-const { statSync, readdirSync, unlinkSync } = require('fs');
-const concat = require('../src/index');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 describe('测试 concat', () => {
   it('对比文件大小', () => {
     let size = 0;
-    const fileList = [];
+    const fileList: string[] = [];
     readdirSync(join(__dirname, 'files'), 'utf8').filter((n) => n !== 'index.js').forEach((file) => {
       file = join(__dirname, 'files', file);
       fileList.push(file);
@@ -26,8 +29,14 @@ describe('测试 concat', () => {
   });
 
   it('测试异常情况', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     expect(concat()).rejects.toThrow();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     expect(concat([])).rejects.toThrow();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     expect(concat([123])).rejects.toThrow();
   });
 });

@@ -1,12 +1,9 @@
 {
   "extends": [
-    "fe"
+    "fe",
+    "fe/ts"
   ],
   "globals": {
-    "describe": true,
-    "it": true,
-    "expect": true,
-    "beforeAll": true,
-    "afterAll": true
+    "__DEV__": true
   }
 }
