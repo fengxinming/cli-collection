@@ -27,9 +27,6 @@
   ],
   "author": "Jesse Feng <fxm0016@126.com>",
   "license": "MIT",
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fengxinming/fs-concat.git"
@@ -54,5 +51,8 @@
     "vite": "^5.1.6",
     "vite-plugin-external": "^4.3.0",
     "vitest": "^1.4.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
