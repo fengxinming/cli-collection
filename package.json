@@ -1,6 +1,6 @@
 {
   "name": "fs-concat",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.1",
   "description": "Concatenate multiple files.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -18,7 +18,8 @@
     "build": "vite build",
     "test": "vitest run --coverage",
     "prepare": "husky",
-    "eslint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx --fix --ignore-path .eslintignore ./"
+    "eslint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx --fix --ignore-path .eslintignore ./",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "fs",
