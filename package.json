@@ -1,6 +1,6 @@
 {
   "name": "fs-concat",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0",
   "description": "Concatenate multiple files.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "bin": {
