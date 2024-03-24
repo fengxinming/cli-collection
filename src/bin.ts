@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import cac from 'cac';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -18,7 +16,7 @@ cli
   .option('-o, --output <file>', 'output file')
   .option('-c, --config <file>', 'specify a config file')
   .action(async (files, { output, config } = {}) => {
-    let promise: Promise<unknown> = Promise.resolve('');
+    let promise: Promise<unknown> = Promise.reject(new Error('Nothing to do.'));
     if (config) {
       if (!isAbsolute(config)) {
         config = join(process.cwd(), config);
