@@ -3,18 +3,20 @@
 layout: home
 
 hero:
-  name: Node Collection
-  text: A collection of reusable Node.js utilities and packages.
-  tagline: node-collection is a private Monorepo project that uses pnpm to manage multiple sub-packages. Each package can be built, tested, and published independently. This project focuses on providing practical Node.js utility functions or small libraries that are easy to reuse in other projects.
+  name: CLI Collection
+  text: A collection of lightweight and reusable CLI tools for daily development tasks.
+  tagline: cli-collection is a monorepo project that contains multiple small, focused command-line tools.
   # actions:
   #   - theme: brand
   #     text: Guide
   #     link: /en/guide
   image:
     src: https://vitepress.dev/vitepress-logo-large.svg
-    alt: node-collection
+    alt: cli-collection
+
 ---
 
 ## Module List
 
-* [read-cfg-file](/en/modules/read-cfg-file/) - A lightweight utility for reading and parsing configuration files in multiple formats.
+* [fs-concat](/en/modules/fs-concat/) - A CLI tool for concatenating multiple files into a single file.
+* [tiret](/en/modules/tiret/) - A Lightweight Performance Benchmarking CLI Tool Based on Benchmark.js.
