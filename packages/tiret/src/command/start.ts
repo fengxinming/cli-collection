@@ -1,9 +1,9 @@
 import { CAC } from 'cac';
-import { getTask } from 'src/util';
 import { glob } from 'tinyglobby';
 
 import { run } from '../index';
 import { spinner } from '../spinner';
+import { getTask } from '../util';
 
 function print(msg) {
   // eslint-disable-next-line no-console
