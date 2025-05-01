@@ -33,7 +33,7 @@
     "cac": "^6.7.14",
     "figlet": "^1.7.0",
     "ora": "^8.0.1",
-    "read-cfg-file": "^1.0.0",
+    "read-cfg-file": "^1.0.1",
     "tinyglobby": "^0.2.13"
   },
   "devDependencies": {

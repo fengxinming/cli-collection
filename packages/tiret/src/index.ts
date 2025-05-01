@@ -1,10 +1,10 @@
 import { EOL } from 'node:os';
 
 import benchmark from 'benchmark';
+import { readCfgFile } from 'read-cfg-file';
 import { glob } from 'tinyglobby';
 
 import { RunFilesOptions, RunOptions, TaskGroup } from './types';
-import { getTask } from './util';
 
 export * from './types';
 
@@ -42,7 +42,7 @@ export async function runFiles(input: string | string[], opts: RunFilesOptions =
   const files = await glob(input, Object.assign({ cwd: cwd || process.cwd(), absolute: true, globOptions }));
 
   for (const file of files) {
-    const tasks = await getTask(file);
+    const tasks = await readCfgFile<TaskGroup | TaskGroup[]>(file);
     if (Array.isArray(tasks)) {
       for (const task of tasks) {
         await run(task, runOpts);

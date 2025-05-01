@@ -19,7 +19,7 @@ export default defineConfig({
   },
   plugins: [
     dts({
-      entryRoot: 'src'
+      include: 'src/*.ts'
     }) as unknown as Plugin,
     pluginExternal({
       nodeBuiltins: true,
