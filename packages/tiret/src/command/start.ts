@@ -1,9 +1,10 @@
 import { CAC } from 'cac';
-import { getTask } from 'src/util';
+import { readCfgFile } from 'read-cfg-file';
 import { glob } from 'tinyglobby';
 
 import { run } from '../index';
 import { spinner } from '../spinner';
+import type { TaskGroup } from '../types';
 
 function print(msg) {
   // eslint-disable-next-line no-console
@@ -25,7 +26,7 @@ export default function start(cli: CAC) {
       const files = await glob(input, { cwd, absolute: true });
 
       for (const file of files) {
-        const tasks = await getTask(file);
+        const tasks = await readCfgFile<TaskGroup | TaskGroup[]>(file);
         if (Array.isArray(tasks)) {
           print(`Benchmark ${file}`);
 
