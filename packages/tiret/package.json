@@ -1,7 +1,7 @@
 {
   "name": "tiret",
   "description": "A Lightweight Performance Benchmarking CLI Tool Based on Benchmark.js.",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -22,12 +22,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fengxinming/fs-concat.git"
+    "url": "git+https://github.com/fengxinming/cli-collection.git",
+    "directory": "packages/tiret"
   },
   "bugs": {
-    "url": "https://github.com/fengxinming/fs-concat/issues"
+    "url": "https://github.com/fengxinming/cli-collection/issues"
   },
-  "homepage": "https://github.com/fengxinming/fs-concat#readme",
+  "homepage": "https://fengxinming.github.io/cli-collection/modules/tiret/",
   "dependencies": {
     "benchmark": "^2.1.4",
     "cac": "^6.7.14",

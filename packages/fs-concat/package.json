@@ -1,6 +1,6 @@
 {
   "name": "fs-concat",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A CLI tool for concatenating multiple files into a single file.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -23,12 +23,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fengxinming/fs-concat.git"
+    "url": "git+https://github.com/fengxinming/cli-collection.git",
+    "directory": "packages/fs-concat"
   },
   "bugs": {
-    "url": "https://github.com/fengxinming/fs-concat/issues"
+    "url": "https://github.com/fengxinming/cli-collection/issues"
   },
-  "homepage": "https://github.com/fengxinming/fs-concat#readme",
+  "homepage": "https://fengxinming.github.io/cli-collection/modules/fs-concat/",
   "dependencies": {
     "cac": "^6.7.14",
     "read-cfg-file": "^1.0.1",
