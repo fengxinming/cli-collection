@@ -1,9 +1,9 @@
 // https://vitepress.dev/guide/custom-theme
-import './style.css';
-
+// eslint-disable-next-line simple-import-sort/imports
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import { h } from 'vue';
+import './style.css';
 
 export default {
   extends: DefaultTheme,

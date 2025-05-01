@@ -5,7 +5,7 @@
 [![NPM version](https://img.shields.io/npm/v/tiret.svg?style=flat)](https://npmjs.org/package/tiret)
 [![NPM Downloads](https://img.shields.io/npm/dm/tiret.svg?style=flat)](https://npmjs.org/package/tiret)
 
-> 基于 Benchmark.js 的轻量级性能测试 CLI 工具。
+> 一个轻量级性能基准测试工具，基于 Benchmark.js。
 
 ## 📘 简介
 

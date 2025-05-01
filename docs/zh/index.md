@@ -3,18 +3,19 @@
 layout: home
 
 hero:
-  name: Node Collection
-  text: 一个 Node.js 工具集合项目，包含多个可复用的包。
-  tagline: node-collection 是一个私有 Monorepo 项目，使用 pnpm 管理多个子模块（packages），每个包都可以独立构建、测试和发布。该项目专注于提供实用的 Node.js 工具函数或小型库，便于在其他项目中复用。
+  name: CLI 工具集
+  text: 一组轻量级、可复用的命令行工具，用于日常开发任务。
+  tagline: cli-collection 是一个单体仓库项目，包含多个小巧而专注的命令行工具。
   # actions:
   #   - theme: brand
-  #     text: 指引
-  #     link: /guide
+  #     text: 指南
+  #     link: /zh/guide
   image:
     src: https://vitepress.dev/vitepress-logo-large.svg
-    alt: node-collection
+    alt: cli-collection
 ---
 
 ## 模块列表
 
-* [read-cfg-file](/zh/modules/read-cfg-file/) - 一个轻量级工具包，用于读取和解析多种格式的配置文件。
+* [fs-concat](/zh/modules/fs-concat/) - 一个用于将多个文件拼接为一个文件的 CLI 工具。
+* [tiret](/zh/modules/tiret/) - 一个轻量级性能基准测试工具，基于 Benchmark.js。
