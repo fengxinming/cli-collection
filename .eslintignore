@@ -4,4 +4,7 @@
 
 dist
 logs
+coverage
 node_modules
+
+!docs/.vitepress/
