@@ -1,34 +1,10 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "sourceMap": false,
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "strict": true,
-    "allowJs": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "downlevelIteration": true,
-    "noUnusedLocals": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
-    "jsx": "preserve",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "outDir": "dist"
-  },
+  "extends": "./tsconfig.base.json",
   "include": [
-    "src",
-    "test",
-    "../../node_modules/vite/client.d.ts"
-  ],
-  "exclude": [
-    "dist"
+    "./packages/**/*.ts",
+    "./packages/**/*.mts",
+    "./docs/.vitepress/**/*.ts",
+    "./docs/.vitepress/**/*.mts",
+    "./node_modules/vite/client.d.ts"
   ]
 }
