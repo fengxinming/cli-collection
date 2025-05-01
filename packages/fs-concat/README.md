@@ -11,7 +11,7 @@
 
 For detailed usage instructions and API references, please visit the official documentation:
 
-👉 [View Full Documentation](https://fengxinming.github.io/node-collection/modules/fs-concat/)
+👉 [View Full Documentation](https://fengxinming.github.io/cli-collection/modules/fs-concat/)
 
 ## Introduction
 
