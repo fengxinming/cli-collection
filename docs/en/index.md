@@ -18,5 +18,6 @@ hero:
 
 ## Module List
 
-* [fs-concat](/en/modules/fs-concat/) - A CLI tool for concatenating multiple files into a single file.
-* [tiret](/en/modules/tiret/) - A Lightweight Performance Benchmarking CLI Tool Based on Benchmark.js.
+* [bombyx](/modules/bombyx/) - A CLI tool for automatically completing basic project configurations, supporting initialization of development tools like ESLint and Husky.
+* [fs-concat](/modules/fs-concat/) - A CLI tool for concatenating multiple files into a single file.
+* [tiret](/modules/tiret/) - A Lightweight Performance Benchmarking CLI Tool Based on Benchmark.js.

@@ -17,5 +17,6 @@ hero:
 
 ## 模块列表
 
+* [bombyx](/zh/modules/bombyx/) - 一个用于自动补全项目基础配置的 CLI 工具，支持 ESLint、Husky 等开发工具初始化。
 * [fs-concat](/zh/modules/fs-concat/) - 一个用于将多个文件拼接为一个文件的 CLI 工具。
 * [tiret](/zh/modules/tiret/) - 一个轻量级性能基准测试工具，基于 Benchmark.js。
