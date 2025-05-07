@@ -1,26 +1,21 @@
-import { readFileSync } from 'node:fs';
 import { EOL } from 'node:os';
-import { dirname, join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 
 import cac from 'cac';
 import { readCfgFile } from 'read-cfg-file';
 
+import { description, name, version } from '../package.json';
 import { concat } from './index';
 import { UserConfig } from './types';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
-const cli = cac(pkg.name);
+const cli = cac(name);
 
 cli
-  .command('[...files]', pkg.description)
+  .command('[...files]', description)
   .option('-o, --output <file>', 'output file')
   .option('-c, --config <file>', 'specify a config file')
   .action(async (files, { output, config } = {}) => {
-    let promise: Promise<unknown> = Promise.reject(new Error('Nothing to do.'));
+    let promise: Promise<unknown> | null = null;
     if (config) {
       config = resolve(config);
 
@@ -37,6 +32,11 @@ cli
       });
     }
 
+    if (!promise) {
+      console.error('Nothing to do.');
+      process.exit(-1);
+    }
+
     const start = Date.now();
     try {
       const dest = await promise;
@@ -48,6 +48,6 @@ cli
     }
   });
 
-cli.version(pkg.version);
+cli.version(version);
 cli.help();
 cli.parse(process.argv);

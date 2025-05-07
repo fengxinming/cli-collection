@@ -1,7 +1,8 @@
 
-import { createReadStream, createWriteStream } from 'fs';
-import { EOL } from 'os';
-import { isAbsolute, join } from 'path';
+import { createReadStream, createWriteStream } from 'node:fs';
+import { EOL } from 'node:os';
+import { isAbsolute, join } from 'node:path';
+
 import { globSync } from 'tinyglobby';
 
 import { UserConfig } from './types';
