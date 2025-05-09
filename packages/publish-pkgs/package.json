@@ -1,6 +1,6 @@
 {
   "name": "publish-pkgs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a CLI tool for batch publishing npm packages, supporting specification of package information through configuration files or command-line parameters.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
