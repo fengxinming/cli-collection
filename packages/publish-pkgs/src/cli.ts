@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { EOL } from 'node:os';
 import { resolve } from 'node:path';
 
@@ -40,7 +41,7 @@ cli
     const start = Date.now();
     try {
       const result = await promise;
-      console.info(`${EOL} Published in ${Date.now() - start} ms${EOL}`);
+      console.log(`${EOL} Published in ${Date.now() - start} ms${EOL}`);
 
       const messages: string[] = [];
       for (const { name, version, code } of result) {
@@ -53,7 +54,7 @@ cli
             break;
         }
       }
-      console.info(EOL + messages.join(EOL) + EOL);
+      console.log(EOL + messages.join(EOL) + EOL);
 
     }
     catch (err) {
