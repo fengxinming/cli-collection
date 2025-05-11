@@ -105,6 +105,7 @@ export async function publishPackages({ packages, client, sort, args }: UserConf
     else {
       result.code = 0;
     }
+    results.push(result);
   }
 
   return results;
