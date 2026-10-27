@@ -1,6 +1,5 @@
-import { statSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { join } from 'node:path';
 
 import { spawn } from 'cross-spawn';
 import { globSync } from 'tinyglobby';
@@ -69,26 +68,12 @@ export async function publishPackages({ packages, client, sort, args }: UserConf
   if (typeof packages === 'string') {
     packages = [packages];
   }
-  let dirs = packages.reduce<string[]>((acc, pkg) => {
-    pkg = resolve(pkg);
-    try {
-      const state = statSync(pkg);
-      if (state.isDirectory()) {
-        acc.push(pkg);
-      }
-    }
-    catch (e) {
-      const arr = globSync(pkg, {
-        onlyDirectories: true,
-        onlyFiles: false,
-        expandDirectories: false
-      });
-      if (arr.length) {
-        acc.push(...arr);
-      }
-    }
-    return acc;
-  }, []);
+  let dirs = globSync(packages, {
+    absolute: true,
+    onlyDirectories: true,
+    onlyFiles: false,
+    expandDirectories: false
+  });
   if (typeof sort === 'function') {
     dirs = sort(dirs);
   }
