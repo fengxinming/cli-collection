@@ -5,14 +5,8 @@ import { spawn } from 'cross-spawn';
 import { globSync } from 'tinyglobby';
 import { request } from 'undici';
 
-import { PublishedResult, UserConfig } from './types';
+import { PkgInfo, PublishedResult, UserConfig } from './types';
 
-interface PkgInfo {
-  name: string;
-  dir: string;
-  version: string;
-  latestVersion: string | null;
-}
 
 function log(name, ...args: any[]) {
   // eslint-disable-next-line no-console
@@ -45,14 +39,13 @@ async function checkVersion(dir: string): Promise<PkgInfo> {
   return { name: pkgName, dir, version, latestVersion };
 }
 
-function publish(client: string, pkgName: string, currentDir: string, newArgs?: any[]): Promise<void> {
+function publish(client: string, pkgName: string, currentDir: string, newArgs: any[]): Promise<void> {
   return new Promise((resolve, reject) => {
     const tag = /\d+\.\d+\.\d+-([a-z]+)\.\d+/.exec(pkgName);
-    const args = [
-      'publish',
+    const args = newArgs.concat([
       '--tag',
       tag ? tag[1] : 'latest'
-    ].concat(newArgs || []);
+    ]);
     const child = spawn(client, args, { cwd: currentDir, stdio: 'inherit' });
     child.on('close', (code) => {
       if (code === 0) {
@@ -67,6 +60,15 @@ function publish(client: string, pkgName: string, currentDir: string, newArgs?: 
 export async function publishPackages({ packages, client, sort, args }: UserConfig): Promise<PublishedResult[]> {
   if (typeof packages === 'string') {
     packages = [packages];
+  }
+  if (!client) {
+    client = 'pnpm';
+  }
+  if (!args) {
+    args = [
+      'publish',
+      '--no-git-checks'
+    ];
   }
   let dirs = globSync(packages, {
     absolute: true,
