@@ -27,9 +27,7 @@ cli
     }
     else if (packages) {
       promise = publishPackages({
-        packages,
-        client: 'pnpm',
-        args: ['--no-git-checks']
+        packages
       });
     }
 
